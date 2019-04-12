@@ -1,9 +1,0 @@
-# .vim/ ディレクトリのすべてのファイルを無視
-# ただしneobundle は追跡対象
-.vim/
-.vim/bundle/*
-.vim/bundle/.neobundle/doc/vimtex.txt
-.vim/bundle/neobundle.vim
-.vim/bundle/vimtex
-!.vim/bundle/neobundle.vim/
-*\~
