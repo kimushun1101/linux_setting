@@ -1,10 +1,9 @@
 #
 #   .zsh configuration file for Linux PC#	
 #
-
 export HOST=`hostname`
 export OS=LINUX
-export PATH=.:/usr/local/bin:/usr/bin:/bin:/usr/X11R6/bin:/usr/sbin:/sbin:/home/dazai/bin
+export PATH=.:/usr/local/bin:/usr/bin:/bin
 export LD_LIBRARY_PATH=/lib:/usr/local/lib:${LD_LIBRARY_PATH}
 export MANPATH=/usr/local/share/man:/usr/share/man
 export EDITOR=/usr/local/bin/ng
@@ -49,7 +48,6 @@ RPROMPT="%{${fg[red]}%}[%~]%{${reset_color}%}"
 # gnome-terminal chage title
 #
 function changetitle {
-  # pwdを二回も実行しているのがなんかダサい...
   current_dir=`pwd | sed -e "s%\(/\([^.]\|\..\)\)[^/]*%\1%g"``pwd | sed -e "s%^.*/\([^.]\|\..\)\([^/]*\)$%\2%"`
   # タイトル用に整形
 #  title=[${USER}@${HOST%%.*}]${current_dir}
@@ -94,17 +92,10 @@ alias h="history"
 alias df="df -h"
 alias du="du -h"
 alias less="less -r"
-alias emacs="env XMODIFIERS=@im=none emacs"
-alias kancolle="firefox http://www.dmm.com/netgame/feature/kancolle.html"
-alias tssh="ssh -Y login-t2.g.gsic.titech.ac.jp -l 11B24595"
-alias tsftp="sftp 11B24595@login-t2.g.gsic.titech.ac.jp"
-alias cvpdf="dvipdfmx -f ipa.map"
-alias hffmpeg="ffmpeg -r 25 -vcodec libx264 -crf 10 -i"
 #alias lm="latexmk -pvc -halt-on-error"
 alias lm="latexmk -pvc"
 alias lmb="latexmk -pvc -xelatex -halt-on-error -shell-escape -synctex=1"
 alias libre="libreoffice"
-alias tw="texworks"
 alias open="xdg-open" 
 alias ink="inkscape"
 
@@ -112,7 +103,7 @@ alias ink="inkscape"
 setopt auto_cd
 function chpwd() { ls && changetitle}
 
-# hokan
+# 補完
 autoload -U compinit
 compinit
 
