@@ -2,23 +2,27 @@
 colorscheme elflord
 set background=dark
 syntax on					"シンタックスカラーリングを設定する
-set number					"行番号を表示する
+set number				"行番号を表示する
 set title					"編集中のファイル名を表示する
-set showcmd					"入力中のコマンドを表示する
+set showcmd				"入力中のコマンドを表示する
 set ruler					"座標を表示する
-set showmatch				"閉じ括弧の入力時に対応する括弧を表示する
-set matchtime=3				"showmatchの表示時間
-set laststatus=2			"ステータスラインを常に表示する
+set showmatch			"閉じ括弧の入力時に対応する括弧を表示する
+set matchtime=3		"showmatchの表示時間
+set laststatus=2	"ステータスラインを常に表示する
 set tabstop=2
 set shiftwidth=2
-set cursorline				"カーソルラインを入れる"
+set cursorline		"カーソルラインを入れる"
+" 以下，文字化けを防ぐ
+set encoding=utf-8
+set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
+set fileformats=unix,dos,mac
 
 
 " 改行時の自動コメントアウトをオフにする
 augroup auto_comment_off
-		autocmd!
-		autocmd BufEnter * setlocal formatoptions-=r
-		autocmd BufEnter * setlocal formatoptions-=o
+	autocmd!
+	autocmd BufEnter * setlocal formatoptions-=r
+	autocmd BufEnter * setlocal formatoptions-=o
 augroup END
 
 set backup
