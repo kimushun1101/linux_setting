@@ -64,6 +64,7 @@ alias lmb="latexmk -pvc -xelatex -halt-on-error -shell-escape -synctex=1"
 alias libre="libreoffice"
 alias open="xdg-open"
 alias ink="inkscape"
+alias cw="cd ~/catkin_ws"
 
 # cdとlsの省略
 setopt auto_cd
@@ -72,6 +73,3 @@ function chpwd() { ls && changetitle}
 autoload -U compinit
 compinit
 
-clear
-source /opt/ros/melodic/setup.zsh
-source ~/catkin_ws/devel/setup.zsh
